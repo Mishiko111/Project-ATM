@@ -1,6 +1,12 @@
-﻿namespace ATM.Domain.Models;
+﻿using System.Text.Json.Serialization;
 
-  public abstract class User
+namespace ATM.Domain.Models;
+
+[JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
+[JsonDerivedType(typeof(Client), typeDiscriminator: "client")]
+[JsonDerivedType(typeof(Admin), typeDiscriminator: "admin")]
+
+public abstract class User
 {
   
 

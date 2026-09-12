@@ -5,6 +5,7 @@
         public Admin(string name, string password, string email, int id)
             : base(name, password, email, id, "Admin")
         {
+
         }
 
 
