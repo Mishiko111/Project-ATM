@@ -6,7 +6,7 @@ using ATM.Services.Repositories;
 namespace ATM.UI;
 
 internal class Program
-{
+{                 
     private static readonly string _fileManager = "users.json";
     private static AuthService _authService;
     private static ATMServices _atmServices;
