@@ -17,9 +17,7 @@ internal class Program
         _authService = new AuthService(_fileManager);
         _atmServices = new ATMServices(_fileManager);
 
-        // ⚠️ შეცვალე ეს ორი მნიშვნელობა შენი რეალური მონაცემებით:
-        // 1) შენი Gmail მისამართი
-        // 2) Google-ის App Password (16 სიმბოლო, არა ჩვეულებრივი პაროლი)
+       
         _emailService = new EmailService("mishikochilachava11@gmail.com", "igii pawr lqpr hrsx");
 
         AdminLogin();
@@ -103,7 +101,7 @@ internal class Program
         }
     }
 
-    // ყოველთვის ფაილიდან ახლად ჩატვირთული, განახლებული client-ის დაბრუნება
+   
     static Client GetFreshClient(string email)
     {
         List<User> users = FileManager.LoadUsersFromFile(_fileManager);

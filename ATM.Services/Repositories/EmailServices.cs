@@ -8,7 +8,7 @@ public class EmailService
     private readonly string _smtpHost;
     private readonly int _smtpPort;
     private readonly string _senderEmail;
-    private readonly string _senderPassword; // App Password, არა ჩვეულებრივი Gmail პაროლი
+    private readonly string _senderPassword; 
 
     public EmailService(string senderEmail, string senderPassword)
     {
