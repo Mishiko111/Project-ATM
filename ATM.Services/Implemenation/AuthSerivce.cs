@@ -1,6 +1,6 @@
 ﻿using ATM.Domain.Models;
 using ATM.Infrastructure;
-using ATM.Services;
+using ATM.Services.Repositories;
 
 namespace ATM.Domain.Services;
 

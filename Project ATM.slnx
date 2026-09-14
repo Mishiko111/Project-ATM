@@ -3,6 +3,6 @@
     <Project Path="ATM.DOMAIN/ATM.Domain.csproj" />
     <Project Path="ATM.Infrastructure/ATM.Infrastructure.csproj" />
     <Project Path="ATM.Services/ATM.Services.csproj" />
+    <Project Path="ATM.UI/ATM.UI.csproj" Id="cffba15f-90bd-404c-b04f-7114064597cf" />
   </Folder>
-  <Project Path="ATM.UI/ATM.UI.csproj" Id="cffba15f-90bd-404c-b04f-7114064597cf" />
 </Solution>

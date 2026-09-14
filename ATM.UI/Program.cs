@@ -345,7 +345,7 @@ internal class Program
                 Console.WriteLine("Loan rejected.");
             }
 
-            // ემეილის გაგზავნა კლიენტისთვის დადასტურებით (HTML დიზაინით)
+            
             try
             {
                 decimal? balanceForEmail = isApproved
