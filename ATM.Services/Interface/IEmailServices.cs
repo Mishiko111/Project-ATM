@@ -7,9 +7,7 @@ namespace ATM.Services.Interface;
 
 internal interface IEmailServices
 {
-    void SendEmail(string to, string subject, string body);
-
-    EmailService GetEmailService();
+    void SendEmail(string toEmail, string subject, string body, bool isHtml = false);
 
     void SendLoanDecisionEmail(string toEmail, string clientName, decimal amount, bool isApproved, decimal? newBalance = null);
 

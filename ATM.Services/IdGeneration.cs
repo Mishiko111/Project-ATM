@@ -1,7 +1,7 @@
 ﻿using ATM.Domain.Models;
 using System.Reflection.Metadata;
 
-namespace ATM.Services.Repositories;
+namespace ATM.Services;
 
 public class IdGeneration
 {

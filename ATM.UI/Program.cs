@@ -10,26 +10,30 @@ internal class Program
     private static readonly string _fileManager = "users.json";
     private static AuthService _authService;
     private static ATMServices _atmServices;
-    private static EmailService _emailService;
+    private static EmailServices _emailService;
 
+  
     static void Main(string[] args)
     {
         _authService = new AuthService(_fileManager);
         _atmServices = new ATMServices(_fileManager);
 
        
-        _emailService = new EmailService("mishikochilachava11@gmail.com", "igii pawr lqpr hrsx");
+        _emailService = new EmailServices("mishikochilachava11@gmail.com", "igii pawr lqpr hrsx");
 
         AdminLogin();
         Console.WriteLine("Welcome to the ATM System!");
         while (true)
         {
-            Console.WriteLine("\nPlease select an option:");
+            Console.WriteLine("===============================");
+            Console.WriteLine("Please select an option:");
+            Console.WriteLine("===============================");
             Console.WriteLine("1. Register");
             Console.WriteLine("2. Login");
             Console.WriteLine("3. Exit");
 
             string choice = Console.ReadLine();
+            Console.Clear();
             switch (choice)
             {
                 case "1":
@@ -44,9 +48,15 @@ internal class Program
                 default:
                     Console.WriteLine("Invalid option. Please try again.");
                     break;
+
+                    
             }
+            
         }
+       
     }
+
+   
 
     static void Register()
     {
@@ -56,9 +66,10 @@ internal class Program
         string password = Console.ReadLine();
         Console.WriteLine("Enter your email:");
         string email = Console.ReadLine();
+        Console.Clear();
         try
         {
-            _authService.RegisterClinet(name, password, email);
+            _authService.RegisterClient(name, password, email);
             Console.WriteLine("Registration successful!");
         }
         catch (Exception ex)
@@ -83,7 +94,7 @@ internal class Program
                 throw new ArgumentException("Invalid email or password.");
             }
 
-            Console.Clear(); // ძველი ჩანაწერების წაშლა ლოგინის შემდეგ
+            Console.Clear();
             Console.WriteLine($"Login successful! Welcome, {user.Name}.");
 
             if (user is Admin admin)
@@ -104,6 +115,8 @@ internal class Program
    
     static Client GetFreshClient(string email)
     {
+        
+
         List<User> users = FileManager.LoadUsersFromFile(_fileManager);
         return users.OfType<Client>().FirstOrDefault(u => u.Email == email);
     }
@@ -271,7 +284,7 @@ internal class Program
             FileManager.SaveUsersToFile(user, _fileManager);
         }
     }
-
+     
     static void ViewAllUsers()
     {
         List<User> users = FileManager.LoadUsersFromFile(_fileManager);
@@ -279,11 +292,11 @@ internal class Program
         {
             if (user is Client client)
             {
-                Console.WriteLine($"[Client] {client.Name}, {client.Email}, Balance: {client.Balance:C}");
+                Console.WriteLine($"[Client] {client.Name}, {client.Email}, Balance: {client.Balance:C}  ,{client.Id}");
             }
             else if (user is Admin admin)
             {
-                Console.WriteLine($"[Admin] {admin.Name}, {admin.Email}");
+                Console.WriteLine($"[Admin] {admin.Name}, {admin.Email} {admin.Id}");
             }
         }
     }

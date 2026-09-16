@@ -12,7 +12,7 @@ internal interface IAuthServices
     Client RegisterClient(string name, string password, string email, decimal balance = 0);
 
    
-    User login(string email, string password);
+    User Login(string email, string password);
 
 
 }

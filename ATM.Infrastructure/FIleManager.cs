@@ -1,10 +1,14 @@
 ﻿using ATM.Domain.Models;
 using System.Text.Json;
+using ATM.Domain.Interfaces;
 
 namespace ATM.Infrastructure;
 
-public class FileManager
+public class FileManager : IFileManager
 {
+
+
+    string path = @" C:\Users\Misho\Desktop\Project ATM\ATM.Infrastructure\Data\";
     private static readonly JsonSerializerOptions _options = new()
     {
         WriteIndented = true
@@ -33,4 +37,8 @@ public class FileManager
         List<User>? users = JsonSerializer.Deserialize<List<User>>(json, _options);
         return users ?? new List<User>();
     }
+}
+
+public interface IFileManager
+{
 }

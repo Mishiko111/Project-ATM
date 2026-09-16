@@ -1,16 +1,17 @@
-﻿using System.Net;
+﻿using ATM.Services.Interface;
+using System.Net;
 using System.Net.Mail;
 
 namespace ATM.Services.Repositories;
 
-public class EmailService
+public class EmailServices : IEmailServices
 {
     private readonly string _smtpHost;
     private readonly int _smtpPort;
     private readonly string _senderEmail;
     private readonly string _senderPassword; 
 
-    public EmailService(string senderEmail, string senderPassword)
+    public EmailServices(string senderEmail, string senderPassword)
     {
         _smtpHost = "smtp.gmail.com";
         _smtpPort = 587;
@@ -46,7 +47,7 @@ public class EmailService
         SendEmail(toEmail, subject, htmlBody, isHtml: true);
     }
 
-    private string BuildLoanDecisionHtml(string clientName, decimal amount, bool isApproved, decimal? newBalance)
+    public string BuildLoanDecisionHtml(string clientName, decimal amount, bool isApproved, decimal? newBalance)
     {
         string statusColor = isApproved ? "#16a34a" : "#dc2626";
         string statusText = isApproved ? "დამტკიცებულია" : "უარყოფილია";

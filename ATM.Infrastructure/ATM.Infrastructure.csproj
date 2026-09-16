@@ -10,4 +10,8 @@
     <ProjectReference Include="..\ATM.DOMAIN\ATM.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

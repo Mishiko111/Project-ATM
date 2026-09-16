@@ -1,10 +1,11 @@
 ﻿using ATM.Domain.Models;
 using ATM.Infrastructure;
-using ATM.Services.Repositories;
+using ATM.Services;
+using ATM.Services.Interface;
 
 namespace ATM.Domain.Services;
 
-public class AuthService
+public class AuthService : IAuthServices
 {
     private readonly string _fileManager;
 
@@ -30,7 +31,7 @@ public class AuthService
         }
     }
 
-    public Client RegisterClinet(string name, string password, string email, decimal balance = 0)
+    public Client RegisterClient(string name, string password, string email, decimal balance = 0)
     {
         if (!IsValidEmail(email))
         {
@@ -79,4 +80,10 @@ public class AuthService
         }
         return user;
     }
+
+    bool IAuthServices.IsValidEmail(string email)
+    {
+        throw new NotImplementedException();
+    }
+
 }

@@ -1,8 +1,9 @@
 ﻿using ATM.Domain.Models;
 using ATM.Infrastructure;
+using ATM.Services.Interface;
 
 namespace ATM.Services.Repositories;
-public  class ATMServices
+public  class ATMServices :IATMServices
 {
     private readonly string _fileManager;
 
