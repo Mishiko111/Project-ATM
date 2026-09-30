@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ATM.Domain.Models;
 using System;
+using System;
+using System.Collections.Generic;
 using System.Collections.Generic;
 using System.Text;
 

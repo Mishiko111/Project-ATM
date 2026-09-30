@@ -2,6 +2,7 @@
 using ATM.Infrastructure;
 using ATM.Services.Interface;
 
+
 namespace ATM.Services.Repositories;
 public  class ATMServices :IATMServices
 {

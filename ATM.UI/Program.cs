@@ -128,7 +128,7 @@ internal class Program
             Client fresh = GetFreshClient(client.Email) ?? client;
 
             Console.WriteLine("\nClient Menu:");
-            Console.WriteLine($"Current Balance: {fresh.Balance:C}");
+            Console.WriteLine($"Current Balance: {fresh.Balance:C}$ {client.Id}ID");
             Console.WriteLine("1. Deposit");
             Console.WriteLine("2. Withdraw");
             Console.WriteLine("3. Check Balance");
